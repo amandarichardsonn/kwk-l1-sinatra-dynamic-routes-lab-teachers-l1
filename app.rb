@@ -9,9 +9,15 @@ class App < Sinatra::Base
     num = params[:number]
     (num.to_i**2).to_s
   end
-  get '/say/:number/:phrase' do
-    num = params[:number]
-    phrase = params[:phrase]
 
+  get '/say/:number/:phrase' do
+    final_string = ""
+    (params[:number].to_i).times do
+      final_string += "#{params[:phrase]}/n"
   end
+  final_string
+  end
+
+  get '/say/:word1/:word2/:word3/:word4/:word5'
+
 end
